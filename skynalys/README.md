@@ -28,8 +28,8 @@ Sans `RESEND_API_KEY`, les commandes et formulaires sont acceptés mais seulemen
 
 | Besoin | Fichier |
 |---|---|
-| Couleurs de la charte | `src/app/globals.css`, bloc `:root` en haut du fichier |
-| Polices | `src/app/layout.tsx` (`Inter`, `Manrope`) |
+| Couleurs de la charte | `src/app/globals.css`, bloc `:root` (palette officielle puis rôles dérivés) |
+| Polices | `src/app/layout.tsx` (Syne pour les titres, Outfit pour le texte) |
 | Nom, coordonnées, SIREN, TVA, seuil de livraison | `src/lib/site.ts` |
 | Produits, prix, conditionnements, catégories | `src/lib/catalog.ts` |
 | Lots, COA et FDS publiés | `src/lib/catalog.ts`, tableau `batches` |
@@ -52,7 +52,7 @@ Sans `RESEND_API_KEY`, les commandes et formulaires sont acceptés mais seulemen
 
 ## Avant la mise en ligne
 
-- [ ] Remplacer les couleurs provisoires par la charte Skynalys
+- [x] Appliquer la charte Skynalys (Deep Navy, Lavender, Mint Foil, Blush, Chrome)
 - [ ] Compléter les champs entre crochets de `src/lib/site.ts` (raison sociale, adresse, SIREN, TVA, téléphone)
 - [ ] Faire valider les pages légales et les CGV par un juriste, ainsi que la conformité de la vente de chaque référence dans les pays desservis
 - [ ] Vérifier chaque donnée chimique (CAS, formule, masse molaire) contre le certificat du fournisseur ; les champs inconnus sont laissés vides volontairement

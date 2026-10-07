@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Manrope } from "next/font/google";
+import { Outfit, Syne } from "next/font/google";
 import { AnnouncementBar } from "@/components/AnnouncementBar";
 import { CartDrawer } from "@/components/CartDrawer";
 import { CartProvider } from "@/components/CartProvider";
@@ -11,8 +11,8 @@ import { organizationLd, websiteLd } from "@/lib/jsonld";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const body = Inter({ subsets: ["latin"], variable: "--font-body", display: "swap" });
-const heading = Manrope({ subsets: ["latin"], variable: "--font-heading", weight: ["600", "700", "800"], display: "swap" });
+const body = Outfit({ subsets: ["latin"], variable: "--font-body", weight: ["300", "400", "500", "600"], display: "swap" });
+const heading = Syne({ subsets: ["latin"], variable: "--font-heading", weight: ["500", "600", "700"], display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0d2438",
+  themeColor: "#14192b",
   width: "device-width",
   initialScale: 1,
 };

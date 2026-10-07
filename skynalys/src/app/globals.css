@@ -4,27 +4,39 @@
    les variables du bloc ci-dessous. Tout le site en depend.
    ============================================================ */
 :root {
-  --brand-900: #0d2438; /* fond sombre : bandeau, pied de page */
-  --brand-700: #163a5a; /* couleur principale : titres, boutons */
-  --brand-500: #2a6f9e; /* liens, accents secondaires */
-  --accent: #23a594; /* appels a l'action, badges positifs */
-  --accent-ink: #ffffff; /* texte sur la couleur d'accent */
-  --accent-soft: #e3f4f1;
+  /* Palette officielle Skynalys (direction 01.C) */
+  --navy: #14192b; /* Deep Navy */
+  --lavender: #b8a7e9; /* Accent 1 */
+  --mint: #a9e8c9; /* Accent 2 : Mint Foil */
+  --blush: #f4d3d9; /* Accent 3 */
+  --chrome: #c1cddb; /* Surface */
+  --iris: linear-gradient(115deg, #b8a7e9 0%, #f4d3d9 52%, #a9e8c9 100%);
 
-  --bg: #f6f8fa;
+  /* Roles derives de la palette (contrastes verifies WCAG AA) */
+  --brand-900: var(--navy); /* fonds sombres : bandeau, hero, pied de page */
+  --brand-700: #232a45; /* boutons principaux, survols */
+  --brand-500: #5f4bb6; /* liens (lavande foncee, lisible sur fond clair) */
+  --accent: var(--lavender); /* appels a l'action, filets, puces */
+  --accent-ink: var(--navy); /* texte sur la lavande */
+  --accent-strong: #5f4bb6; /* lavande pour du texte sur fond clair */
+  --accent-soft: #f2eefc;
+  --mint-soft: #ecf9f2;
+  --mint-ink: #1f6b4c;
+
+  --bg: #f8f8fb;
   --surface: #ffffff;
-  --surface-2: #eef2f5;
-  --ink: #0f1c26;
-  --ink-2: #44525e;
-  --muted: #6b7884;
-  --line: #dde4ea;
-  --warn: #b5651d;
-  --warn-soft: #fbf1e6;
+  --surface-2: #f1f2f7;
+  --ink: #14192b;
+  --ink-2: #474d63;
+  --muted: #6b7086;
+  --line: #e4e6ef;
+  --warn: #8f3349;
+  --warn-soft: #fcf0f2;
   --danger: #b42318;
 
-  --radius: 14px;
-  --radius-sm: 8px;
-  --shadow: 0 1px 2px rgba(15, 28, 38, 0.06), 0 8px 24px rgba(15, 28, 38, 0.06);
+  --radius: 18px;
+  --radius-sm: 10px;
+  --shadow: 0 1px 2px rgba(20, 25, 43, 0.05), 0 10px 30px rgba(20, 25, 43, 0.07);
   --container: 1240px;
   --font-sans: var(--font-body), system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-display: var(--font-heading), var(--font-sans);
@@ -71,9 +83,10 @@ h3,
 h4 {
   font-family: var(--font-display);
   color: var(--brand-900);
-  line-height: 1.15;
+  line-height: 1.1;
   margin: 0 0 0.5em;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
+  font-weight: 700;
 }
 h1 {
   font-size: clamp(2rem, 4vw, 3rem);
@@ -135,7 +148,7 @@ textarea {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-strong);
   margin-bottom: 8px;
 }
 .lead {
@@ -242,7 +255,7 @@ textarea {
 /* ---------- Bandeau ---------- */
 .announce {
   background: var(--brand-900);
-  color: #dbe6ef;
+  color: #d9dcea;
   font-size: 0.8125rem;
   overflow: hidden;
   white-space: nowrap;
@@ -279,7 +292,7 @@ textarea {
   position: sticky;
   top: 0;
   z-index: 40;
-  background: rgba(255, 255, 255, 0.94);
+  background: rgba(255, 255, 255, 0.9);
   backdrop-filter: saturate(160%) blur(10px);
   border-bottom: 1px solid var(--line);
 }
@@ -294,10 +307,10 @@ textarea {
   align-items: center;
   gap: 10px;
   font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1.3rem;
+  font-weight: 700;
+  font-size: 1.45rem;
   color: var(--brand-900);
-  letter-spacing: 0.02em;
+  letter-spacing: -0.02em;
   text-decoration: none !important;
   white-space: nowrap;
 }
@@ -410,7 +423,7 @@ textarea {
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(13, 36, 56, 0.45);
+  background: rgba(20, 25, 43, 0.45);
   z-index: 60;
 }
 .drawer {
@@ -485,16 +498,18 @@ textarea {
 .progress > span {
   display: block;
   height: 100%;
-  background: var(--accent);
+  background: var(--iris);
   transition: width 0.3s;
 }
 
 /* ---------- Hero ---------- */
 .hero {
   background:
-    radial-gradient(1200px 400px at 85% -10%, rgba(35, 165, 148, 0.18), transparent 60%),
-    linear-gradient(180deg, var(--brand-900), var(--brand-700));
-  color: #e6eef5;
+    radial-gradient(600px 380px at 82% 20%, rgba(184, 167, 233, 0.35), transparent 65%),
+    radial-gradient(520px 320px at 95% 85%, rgba(169, 232, 201, 0.22), transparent 65%),
+    radial-gradient(500px 300px at 10% 110%, rgba(244, 211, 217, 0.14), transparent 70%),
+    var(--brand-900);
+  color: #e6e8f2;
   padding: 72px 0 64px;
 }
 .hero h1 {
@@ -502,7 +517,13 @@ textarea {
   max-width: 18ch;
 }
 .hero .lead {
-  color: #c6d5e2;
+  color: #c9cce0;
+}
+.iris-text {
+  background: var(--iris);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 .hero-grid {
   display: grid;
@@ -538,11 +559,12 @@ textarea {
 }
 .hero-stats span {
   font-size: 0.8rem;
-  color: #a9bccb;
+  color: #a3a8c3;
 }
 .hero-visual {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
   border-radius: 24px;
   padding: 28px;
 }
@@ -584,7 +606,7 @@ textarea {
   height: 38px;
   border-radius: 10px;
   background: var(--accent-soft);
-  color: var(--accent);
+  color: var(--accent-strong);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -655,7 +677,7 @@ textarea {
 }
 .product-card-media {
   position: relative;
-  background: linear-gradient(180deg, var(--surface-2), var(--surface));
+  background: radial-gradient(circle at 50% 40%, var(--accent-soft), var(--surface) 70%);
   aspect-ratio: 1 / 1;
   display: flex;
   align-items: center;
@@ -706,7 +728,7 @@ textarea {
 }
 .tag-accent {
   background: var(--accent-soft);
-  color: var(--accent);
+  color: var(--accent-strong);
 }
 .tag-warn {
   background: var(--warn-soft);
@@ -762,7 +784,10 @@ textarea {
   }
 }
 .pdp-media {
-  background: linear-gradient(180deg, var(--surface-2), var(--surface));
+  background:
+    radial-gradient(circle at 30% 25%, rgba(184, 167, 233, 0.25), transparent 55%),
+    radial-gradient(circle at 75% 80%, rgba(169, 232, 201, 0.22), transparent 55%),
+    var(--surface);
   border: 1px solid var(--line);
   border-radius: 20px;
   aspect-ratio: 1 / 1;
@@ -803,12 +828,12 @@ textarea {
   padding: 12px 14px;
   border-radius: var(--radius-sm);
   background: var(--warn-soft);
-  color: #6b3c10;
+  color: var(--warn);
   font-size: 0.85rem;
 }
 .notice-info {
   background: var(--accent-soft);
-  color: #0f5a50;
+  color: #3d2f84;
 }
 .option-group {
   margin-top: 20px;
@@ -844,7 +869,7 @@ textarea {
 .chip[aria-checked="true"] {
   border-color: var(--brand-700);
   box-shadow: inset 0 0 0 1px var(--brand-700);
-  background: #f3f7fb;
+  background: var(--accent-soft);
 }
 .tiers {
   display: grid;
@@ -870,7 +895,7 @@ textarea {
 }
 .tier[aria-checked="true"] {
   border-color: var(--brand-700);
-  background: #f3f7fb;
+  background: var(--accent-soft);
 }
 .tier[aria-checked="true"] .radio {
   border: 5px solid var(--brand-700);
@@ -1027,7 +1052,7 @@ textarea {
   content: "+";
   font-size: 1.3rem;
   line-height: 1;
-  color: var(--accent);
+  color: var(--accent-strong);
 }
 .faq details[open] summary::after {
   content: "−";
@@ -1118,7 +1143,7 @@ textarea {
 .textarea:focus {
   outline: none;
   border-color: var(--brand-500);
-  box-shadow: 0 0 0 3px rgba(42, 111, 158, 0.18);
+  box-shadow: 0 0 0 3px rgba(95, 75, 182, 0.18);
 }
 .check {
   display: flex;
@@ -1139,8 +1164,8 @@ textarea {
   font-size: 0.9rem;
 }
 .form-status.ok {
-  background: var(--accent-soft);
-  color: #0f5a50;
+  background: var(--mint-soft);
+  color: var(--mint-ink);
 }
 .form-status.err {
   background: #fdecea;
@@ -1219,8 +1244,11 @@ textarea {
 
 /* ---------- Bloc pro / CTA ---------- */
 .cta-band {
-  background: linear-gradient(120deg, var(--brand-700), var(--brand-900));
-  color: #dbe6ef;
+  background:
+    radial-gradient(500px 260px at 100% 0%, rgba(184, 167, 233, 0.3), transparent 70%),
+    radial-gradient(420px 240px at 0% 100%, rgba(169, 232, 201, 0.16), transparent 70%),
+    var(--brand-900);
+  color: #d9dcea;
   border-radius: 24px;
   padding: 36px 28px;
   display: grid;
@@ -1256,7 +1284,7 @@ textarea {
   margin-top: 3px;
   border-radius: 999px;
   background: var(--accent)
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E")
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2314192b' stroke-width='3'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E")
     center / 12px no-repeat;
 }
 .compare {
@@ -1272,13 +1300,13 @@ textarea {
 /* ---------- Pied de page ---------- */
 .footer {
   background: var(--brand-900);
-  color: #b6c6d4;
+  color: #a9aec6;
   padding: 56px 0 24px;
   margin-top: 40px;
   font-size: 0.92rem;
 }
 .footer a {
-  color: #dbe6ef;
+  color: #e2e4ef;
 }
 .footer h3 {
   color: #fff;
@@ -1330,7 +1358,7 @@ textarea {
   color: #fff;
 }
 .newsletter .input::placeholder {
-  color: #8fa4b6;
+  color: #8a90ab;
 }
 
 /* ---------- Calculatrice ---------- */
@@ -1345,7 +1373,7 @@ textarea {
 }
 .result {
   background: var(--brand-900);
-  color: #dbe6ef;
+  color: #d9dcea;
   border-radius: var(--radius);
   padding: 24px;
 }
@@ -1362,7 +1390,7 @@ textarea {
   margin: 16px 0 0;
 }
 .result dt {
-  color: #9fb3c4;
+  color: #a3a8c3;
 }
 .result dd {
   margin: 0;

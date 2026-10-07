@@ -32,9 +32,9 @@ export function ProGate() {
 
   return (
     <>
-      <div className="overlay" style={{ background: "rgba(13,36,56,0.85)" }} />
+      <div className="overlay" style={{ background: "rgba(20,25,43,0.88)" }} />
       <div className="modal" role="dialog" aria-modal="true" aria-labelledby="gate-title">
-        <LogoMark size={44} />
+        <LogoMark size={44} id="orb-gate" />
         <p className="eyebrow" style={{ marginTop: 16 }}>
           Accès réservé aux professionnels
         </p>

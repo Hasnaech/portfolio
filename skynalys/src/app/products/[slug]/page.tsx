@@ -95,7 +95,7 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
             <Icon name="info" size={18} />
             <span>Usage exclusif en recherche in vitro et en analyse. Ne pas administrer à l’homme ni à l’animal.</span>
           </div>
-          <p className="small" style={{ marginTop: 12, display: "flex", gap: 8, alignItems: "center", color: "var(--accent)", fontWeight: 600 }}>
+          <p className="small" style={{ marginTop: 12, display: "flex", gap: 8, alignItems: "center", color: "var(--mint-ink)", fontWeight: 600 }}>
             <Icon name="check" size={16} /> En stock, expédition sous 24 à 48 h ouvrées
           </p>
           <BuyBox product={p} />

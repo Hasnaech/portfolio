@@ -71,8 +71,8 @@ export function Footer() {
             </ul>
           </div>
         </div>
-        <p className="small" style={{ marginTop: 32, color: "#8fa4b6" }}>
-          <strong style={{ color: "#dbe6ef" }}>Avertissement : </strong>
+        <p className="small" style={{ marginTop: 32, color: "#8a90ab" }}>
+          <strong style={{ color: "#e2e4ef" }}>Avertissement : </strong>
           {researchDisclaimer}
         </p>
         <div className="footer-legal">

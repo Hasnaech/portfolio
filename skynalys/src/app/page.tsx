@@ -35,7 +35,9 @@ export default function HomePage() {
         <div className="container hero-grid">
           <div>
             <span className="eyebrow">Fournisseur européen pour la recherche</span>
-            <h1>Des peptides de recherche dont chaque lot est documenté</h1>
+            <h1>
+              Des peptides de recherche dont <span className="iris-text">chaque lot est documenté</span>
+            </h1>
             <p className="lead">
               Réactifs de grade recherche pour laboratoires, CRO et centres de recherche clinique. Certificat d’analyse par lot, fiches de
               sécurité et achats institutionnels simplifiés.
@@ -172,7 +174,7 @@ export default function HomePage() {
           <div>
             <span className="eyebrow">Achats institutionnels</span>
             <h2>Un compte pro pour commander comme votre service achats l’attend</h2>
-            <ul className="feature-list" style={{ color: "#dbe6ef" }}>
+            <ul className="feature-list" style={{ color: "#d9dcea" }}>
               <li>Bons de commande et paiement à 30 jours</li>
               <li>Tarifs dégressifs jusqu’à −35 % et devis pour les volumes</li>
               <li>Historique des lots et téléchargement des COA en un clic</li>

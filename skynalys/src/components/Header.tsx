@@ -82,7 +82,7 @@ export function Header() {
           <div className="overlay" onClick={() => setMenu(false)} />
           <aside className="drawer drawer-left" role="dialog" aria-modal="true" aria-label="Menu">
             <div className="drawer-head">
-              <Logo />
+              <Logo id="orb-menu" />
               <button className="icon-btn" onClick={() => setMenu(false)} aria-label="Fermer le menu">
                 <Icon name="close" />
               </button>

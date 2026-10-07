@@ -85,7 +85,7 @@ export function Calculator() {
           <dt>Masse molaire utilisée</dt>
           <dd>{molar ? `${molar.toLocaleString("fr-FR")} g/mol` : "–"}</dd>
         </dl>
-        <p className="small" style={{ marginTop: 16, marginBottom: 0, color: "#9fb3c4" }}>
+        <p className="small" style={{ marginTop: 16, marginBottom: 0, color: "#a3a8c3" }}>
           Si le volume à prélever est inférieur à 1 µl, préparez une dilution intermédiaire pour garder une bonne précision de pipetage.
         </p>
       </div>
