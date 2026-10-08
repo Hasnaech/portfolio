@@ -50,6 +50,13 @@ Tester avant la mise en production avec une clé `sk_test_...` et la carte `4242
 | Pages légales | `src/lib/legal.ts` |
 | Logo | `src/components/Logo.tsx` et `src/app/icon.svg` |
 
+## Catalogue, prix et contenu
+
+- **83 références** importées de la liste fournisseur, réparties dans 7 catégories (Métabolique, Myo-Science, Recherche Tissulaire, Nootropiques, Longévité, Skin Science, Consommables). Tout est centralisé dans `src/lib/catalog.ts` (fichier généré par `scripts/gen_catalog.py`).
+- **Prix calés sur la référence marché** : grille dégressive 1 / 2 / 3 / 5 / 10 fioles (0 / −10 / −15 / −30 / −40 %) et livraison offerte dès 250 € HT. Les prix des molécules communes sont les prix réels relevés sur la référence ; certains conditionnements interpolés et quelques molécules hors référence (sémaglutide, mazdutide, liraglutide) ont un prix provisoire à confirmer.
+- **Références réglementées** (HGH, HCG, HMG, toxine botulique) : affichées en « Sur devis », sans vente en ligne, avec avertissement. Chaque molécule a sa fiche scientifique dans l'encyclopédie. EPO et liraglutide sont vendables mais marqués réglementés.
+- **Encyclopédie de recherche** (`/recherche`) : page pilier + une fiche-article unique par molécule (plus de 70), contenu scientifique non médical, interconnectée avec les fiches produit, les catégories et le blog. C'est le cœur de la stratégie SEO (pilier + grappes).
+
 ## Fonctionnalités
 
 - Bandeau de réassurance défilant, méga-menu, recherche instantanée (nom, synonyme, CAS)
@@ -67,6 +74,9 @@ Tester avant la mise en production avec une clé `sk_test_...` et la carte `4242
 - [x] Appliquer la charte Skyalys (Deep Navy, Lavender, Mint Foil, Blush, Chrome)
 - [ ] Compléter les champs entre crochets de `src/lib/site.ts` (raison sociale, adresse, SIREN, TVA, téléphone)
 - [ ] Faire valider les pages légales et les CGV par un juriste, ainsi que la conformité de la vente de chaque référence dans les pays desservis
+- [x] Prix calés sur la référence marché (grille dégressive, livraison offerte dès 250 €)
+- [x] Catalogue complet (83 références) et encyclopédie de recherche (pilier + grappes)
+- [ ] Confirmer les prix provisoires (sémaglutide, mazdutide, liraglutide, conditionnements interpolés) et renseigner la vraie grille fournisseur dans `scripts/gen_catalog.py`
 - [ ] Vérifier chaque donnée chimique (CAS, formule, masse molaire) contre le certificat du fournisseur ; les champs inconnus sont laissés vides volontairement
 - [ ] Renseigner les vrais numéros de lot, puretés et liens COA / FDS dans `batches`. Ne publier que des analyses réelles
 - [ ] S'assurer que chaque engagement affiché (analyses tierces, chaîne du froid, délais, paiement à 30 jours) est réellement tenu

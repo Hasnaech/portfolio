@@ -95,10 +95,31 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
             <Icon name="info" size={18} />
             <span>Usage exclusif en recherche in vitro et en analyse. Ne pas administrer à l’homme ni à l’animal.</span>
           </div>
-          <p className="small" style={{ marginTop: 12, display: "flex", gap: 8, alignItems: "center", color: "var(--mint-ink)", fontWeight: 600 }}>
-            <Icon name="check" size={16} /> En stock, expédition sous 24 à 48 h ouvrées
-          </p>
-          <BuyBox product={p} />
+          {p.regulated ? (
+            <div className="notice" role="note" style={{ marginTop: 10 }}>
+              <Icon name="shield" size={18} />
+              <span>
+                Référence réglementée. {p.quoteOnly ? "Non vendue en ligne : disponible uniquement sur devis à des structures de recherche autorisées, après vérification." : "Vente soumise à vérification renforcée de l’établissement et de l’usage déclaré."} Sa cession peut être strictement encadrée selon votre pays.
+              </span>
+            </div>
+          ) : null}
+          {p.quoteOnly ? (
+            <div style={{ marginTop: 20 }}>
+              <Link href={`/quote?produit=${p.slug}`} className="btn btn-primary">
+                Demander un devis
+              </Link>
+              <p className="small muted" style={{ marginTop: 10 }}>
+                Cette référence est fournie à titre documentaire. Notre équipe évalue chaque demande avant toute proposition commerciale.
+              </p>
+            </div>
+          ) : (
+            <>
+              <p className="small" style={{ marginTop: 12, display: "flex", gap: 8, alignItems: "center", color: "var(--mint-ink)", fontWeight: 600 }}>
+                <Icon name="check" size={16} /> En stock, expédition sous 24 à 48 h ouvrées
+              </p>
+              <BuyBox product={p} />
+            </>
+          )}
         </div>
       </div>
 
@@ -117,6 +138,10 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
               <h2>Description</h2>
               <h3>Mécanisme étudié</h3>
               <p>{p.mechanism}</p>
+              <p className="small">
+                <Link href={`/recherche/${p.slug}`}>Lire la fiche de recherche complète du {p.name}</Link> : mécanisme détaillé, axes
+                d’étude, identité chimique et références.
+              </p>
               <h3>Domaines de recherche</h3>
               <ul>
                 {p.researchAreas.map((a) => (

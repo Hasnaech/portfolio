@@ -5,7 +5,7 @@ import { categories, productsByCategory } from "@/lib/catalog";
 
 export const metadata: Metadata = {
   title: "Catégories de recherche",
-  description: "Peptides de recherche classés par axe : métabolique, régénération tissulaire, neurosciences, longévité, dermo-cosmétique et consommables.",
+  description: "Peptides de recherche classés par axe : métabolique, myo-science, recherche tissulaire, nootropiques, longévité, skin science et consommables.",
   alternates: { canonical: "/categories" },
 };
 

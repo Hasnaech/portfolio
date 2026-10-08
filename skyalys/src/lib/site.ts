@@ -23,7 +23,7 @@ export const site = {
     vat: "[TVA intracommunautaire]",
   },
   currency: "EUR",
-  freeShippingThreshold: 300,
+  freeShippingThreshold: 250,
   shippingFlat: 14.9,
   coldChainFee: 19.9,
   vatRate: 0.2,

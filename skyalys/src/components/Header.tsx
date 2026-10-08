@@ -10,6 +10,7 @@ import { Logo } from "./Logo";
 import { SearchDialog } from "./SearchDialog";
 
 const links = [
+  { href: "/recherche", label: "Encyclopédie" },
   { href: "/lab-tests", label: "Analyses & COA" },
   { href: "/calculator", label: "Calculateur" },
   { href: "/blog", label: "Ressources" },
@@ -89,6 +90,7 @@ export function Header() {
             </div>
             <nav className="drawer-body mobile-nav" aria-label="Navigation mobile">
               <Link href="/shop">Toutes les références</Link>
+              <Link href="/recherche">Encyclopédie de recherche</Link>
               <div className="sub">
                 {categories.map((c) => (
                   <Link key={c.slug} href={`/categories/${c.slug}`}>

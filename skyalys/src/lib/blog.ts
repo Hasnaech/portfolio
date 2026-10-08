@@ -59,7 +59,7 @@ export const posts: Post[] = [
     category: "bonnes-pratiques",
     date: "2026-09-02",
     readingMinutes: 6,
-    related: ["eau-bacteriostatique", "acide-acetique-06", "cryoboites"],
+    related: ["bac-water", "acetic-acid", "syringes-1ml"],
     sections: [
       {
         heading: "Avant d’ouvrir le flacon",

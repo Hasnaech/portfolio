@@ -40,6 +40,9 @@ export function Footer() {
                 <Link href="/quote">Demande de devis</Link>
               </li>
               <li>
+                <Link href="/recherche">Encyclopédie de recherche</Link>
+              </li>
+              <li>
                 <Link href="/lab-tests">Analyses, COA et FDS</Link>
               </li>
               <li>

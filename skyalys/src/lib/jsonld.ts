@@ -51,7 +51,9 @@ export const productLd = (p: Product) => ({
   category: getCategory(p.category)?.name,
   image: absoluteUrl(`/products/${p.slug}/opengraph-image`),
   variesBy: ["https://schema.org/size"],
-  hasVariant: p.variants.map((v) => ({
+  hasVariant: p.variants
+    .filter((v) => v.price > 0 && !p.quoteOnly)
+    .map((v) => ({
     "@type": "Product",
     "@id": absoluteUrl(`/products/${p.slug}#${v.sku}`),
     name: `${p.name} ${v.label}`,
@@ -73,7 +75,7 @@ export const productLd = (p: Product) => ({
         valueAddedTaxIncluded: false,
       },
     },
-  })),
+    })),
 });
 
 export const breadcrumbLd = (items: { name: string; path: string }[]) => ({
