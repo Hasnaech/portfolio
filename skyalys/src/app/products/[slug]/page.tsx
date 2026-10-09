@@ -11,7 +11,7 @@ import { VialArt } from "@/components/VialArt";
 import { posts } from "@/lib/blog";
 import { batchFor, getCategory, getProduct, products } from "@/lib/catalog";
 import { productLd } from "@/lib/jsonld";
-import { researchDisclaimer } from "@/lib/site";
+import { clampMeta, researchDisclaimer } from "@/lib/site";
 
 type Params = { slug: string };
 
@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const p = getProduct((await params).slug);
   if (!p) return {};
   const title = `${p.name}${p.synonyms[0] ? ` (${p.synonyms[0]})` : ""} | Grade recherche, COA par lot`;
-  const description = `${p.summary} ${p.variants.map((v) => v.label).join(", ")}. Lot tracé, certificat d’analyse HPLC et MS, FDS.`.slice(0, 300);
+  const description = clampMeta(`${p.summary} Lot tracé, COA par lot (HPLC et MS), FDS.`);
   return {
     title,
     description,
@@ -86,10 +86,10 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
           <Link href={`/categories/${category.slug}`} className="tag tag-accent">
             {category.name}
           </Link>
-          <h1 style={{ marginTop: 12 }}>
-            {p.name}
-            {isReagent ? <span style={{ display: "block", fontSize: "0.5em", color: "var(--muted)", fontWeight: 600 }}>Peptide de grade recherche</span> : null}
-          </h1>
+          <h1 style={{ marginTop: 12 }}>{p.name}</h1>
+          {isReagent ? (
+            <p style={{ marginTop: -6, color: "var(--muted)", fontWeight: 600 }}>Peptide de grade recherche</p>
+          ) : null}
           <p className="lead">{p.summary}</p>
           <div className="notice" role="note">
             <Icon name="info" size={18} />

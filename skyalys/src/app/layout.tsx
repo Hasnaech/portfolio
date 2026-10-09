@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     default: `${site.name} | Peptides de grade recherche pour laboratoires`,
     template: `%s · ${site.name}`,
   },
-  description: site.description,
+  description: site.metaDescription,
   applicationName: site.name,
   alternates: { canonical: "/", types: { "application/rss+xml": "/blog/rss.xml" } },
   openGraph: {
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     locale: site.locale,
     siteName: site.name,
     title: `${site.name} | Peptides de grade recherche pour laboratoires`,
-    description: site.description,
+    description: site.metaDescription,
     url: site.url,
   },
   twitter: { card: "summary_large_image" },

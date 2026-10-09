@@ -5,8 +5,12 @@ export const site = {
   name: "Skyalys",
   legalName: "[Raison sociale Skyalys]",
   tagline: "Peptides et réactifs de grade recherche pour laboratoires et centres de recherche clinique",
+  // Description longue (footer, JSON-LD Organization).
   description:
     "Fournisseur européen de peptides de grade recherche pour laboratoires, CRO et centres de recherche clinique. Lots tracés, certificats d’analyse par lot, fiches de données de sécurité et devis institutionnels.",
+  // Meta description courte (≤ 155 caractères) pour les balises des pages.
+  metaDescription:
+    "Peptides de grade recherche pour laboratoires, CRO et centres de recherche. Lots tracés, certificat d’analyse par lot, FDS et devis institutionnels.",
   url: (process.env.NEXT_PUBLIC_SITE_URL || "https://skyalys.eu").replace(/\/$/, ""),
   locale: "fr_FR",
   email: "contact@skyalys.eu",
@@ -50,4 +54,13 @@ export function formatPrice(value: number) {
 
 export function absoluteUrl(path = "/") {
   return `${site.url}${path.startsWith("/") ? path : `/${path}`}`;
+}
+
+// Tronque proprement un texte pour une meta description (coupe au dernier mot, sans points de suspension).
+export function clampMeta(text: string, max = 155) {
+  const s = text.replace(/\s+/g, " ").trim();
+  if (s.length <= max) return s;
+  const cut = s.slice(0, max);
+  const i = cut.lastIndexOf(" ");
+  return (i > 40 ? cut.slice(0, i) : cut).replace(/[\s,;:.–—-]+$/, "");
 }

@@ -1,5 +1,5 @@
 import { getCategory, products, type Product } from "./catalog";
-import { site } from "./site";
+import { clampMeta, site } from "./site";
 
 // L'encyclopedie de recherche : une fiche-article unique par molecule, construite
 // a partir des donnees propres du produit (mecanisme, axes, identite, references).
@@ -15,8 +15,7 @@ export function monographTitle(p: Product) {
 }
 
 export function monographDescription(p: Product) {
-  const cas = p.cas ? ` CAS ${p.cas}.` : "";
-  return `${p.name} : ${p.summary} Mécanisme, axes de recherche, identité chimique et références scientifiques.${cas}`.slice(0, 300);
+  return clampMeta(`${p.name} : ${p.summary} Mécanisme, axes de recherche, identité chimique et références.`);
 }
 
 export function readingMinutes(p: Product) {
