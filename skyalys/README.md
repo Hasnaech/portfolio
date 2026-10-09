@@ -76,7 +76,8 @@ Tester avant la mise en production avec une clé `sk_test_...` et la carte `4242
 - [ ] Faire valider les pages légales et les CGV par un juriste, ainsi que la conformité de la vente de chaque référence dans les pays desservis
 - [x] Prix calés sur la référence marché (grille dégressive, livraison offerte dès 250 €)
 - [x] Catalogue complet (83 références) et encyclopédie de recherche (pilier + grappes)
-- [ ] Confirmer les prix provisoires (sémaglutide, mazdutide, liraglutide, conditionnements interpolés) et renseigner la vraie grille fournisseur dans `scripts/gen_catalog.py`
+- [x] Prix alignés sur la référence (molécules communes) ; molécules hors référence tarifées par ancrage analogue (logique de prix de la référence)
+- [ ] Si tu obtiens la vraie grille fournisseur pour les molécules hors référence, remplacer les prix par ancrage dans `scripts/gen_catalog.py`
 - [ ] Vérifier chaque donnée chimique (CAS, formule, masse molaire) contre le certificat du fournisseur ; les champs inconnus sont laissés vides volontairement
 - [ ] Renseigner les vrais numéros de lot, puretés et liens COA / FDS dans `batches`. Ne publier que des analyses réelles
 - [ ] S'assurer que chaque engagement affiché (analyses tierces, chaîne du froid, délais, paiement à 30 jours) est réellement tenu

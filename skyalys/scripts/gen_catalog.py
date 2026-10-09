@@ -703,6 +703,65 @@ add("syringes-1ml","Seringues 1 ml","consommables","consommable",
  "Seringues graduées à usage unique pour le prélèvement et la dilution précis des solutions de peptides au laboratoire.",
  ["Prélèvement et dilution","Précision de pipetage"],[],"")
 
+
+# ======== REBASE PRIX (logique Optima) pour molecules absentes d'Optima ========
+# Ancres = (taille_mg_reference, prix_Optima). Le prix suit price = P0*(mg/S0)**0.65, arrondi en ,99.
+ANCHORS = {
+    "glp1": (10, 64.99),      # tirzepatide : gros peptide incretine
+    "aod": (5, 84.99),        # AOD-9604 : fragment GH lipolytique
+    "secreta": (10, 64.99),   # ipamoreline : secretagogue GH
+    "ghrh": (10, 79.99),      # tesamoreline : analogue GHRH
+    "gf": (2, 69.99),         # PEG-MGF : facteur de croissance
+    "igf": (1, 89.99),        # IGF-1 LR3
+    "bioreg": (10, 59.99),    # epithalon : peptide court bioregulateur
+    "immuno": (5, 69.99),     # LL-37 : peptide immuno/antimicrobien
+    "short": (5, 44.99),      # selank : petit peptide
+    "amylin": (10, 129.99),   # cagrilintide : gros peptide
+    "mito": (10, 54.99),      # MOTS-c : peptide mitochondrial (longevite)
+    "copper": (50, 39.99),    # GHK-Cu : peptide cuivre (50/100 mg)
+    "cosmo": (10, 39.99),     # SNAP-8 : peptide cosmetique
+}
+# Affectation d'une ancre a chaque molecule absente d'Optima (mg uniquement).
+REBASE = {
+    "semaglutide":"glp1","mazdutide":"glp1","liraglutide":"glp1",
+    "hgh-fragment-176-191":"aod","frag-17-23":"aod",
+    "sermorelin":"ghrh","hexarelin":"secreta",
+    "igf-des":"gf","mgf":"gf",
+    "vip":"immuno","thymosin-alpha-1":"immuno","thymalin":"immuno","ara-290":"secreta",
+    "cartalax":"bioreg","cardiogen":"bioreg","cortagen":"bioreg","bronchogen":"bioreg",
+    "ahk-cu":"copper","matrixyl":"cosmo",
+    "dermorphin":"short","gonadorelin":"short","triptorelin":"short",
+    "ss-31":"mito","humanin":"mito","orexin-a":"amylin","orexin-b":"amylin",
+}
+# Prix premium manuels (proteines rares, senolytiques, specialites) : pas d'analogue Optima direct.
+PREMIUM = {"follistatin":{"1":149.99},"ace-031":{"1":149.99},"gdf-8":{"1":99.99},
+           "fox04-dri":{"2":89.99,"10":249.99},"ptd-dbm":{"1":59.99},"melatonin":{"10":29.99}}
+
+import re as _re
+def _mg(label):
+    m=_re.search(r"([0-9.]+)\s*mg",label)
+    return float(m.group(1)) if m else None
+def _price(S0,P0,mg):
+    v=P0*((mg/S0)**0.65)
+    r=round(v)
+    return (r-0.01) if r>=1 else round(v,2)
+for _p in P:
+    slug=_p["slug"]
+    if slug in PREMIUM:
+        nv=[]
+        for lab,price in _p["variants"]:
+            mg=_mg(lab); key=str(int(mg)) if mg and mg==int(mg) else (str(mg) if mg else None)
+            nv.append((lab, PREMIUM[slug].get(key, price)))
+        _p["variants"]=nv
+    elif slug in REBASE:
+        S0,P0=ANCHORS[REBASE[slug]]
+        nv=[]
+        for lab,price in _p["variants"]:
+            mg=_mg(lab)
+            nv.append((lab, _price(S0,P0,mg) if mg else price))
+        _p["variants"]=nv
+
+
 # ======== EMISSION TS ========
 def ts(s):
     return '"' + s.replace("\\","\\\\").replace('"','\\"') + '"'
