@@ -1,5 +1,8 @@
 export type BlogCategory = { slug: string; name: string };
 
+export type SectionLink = { label: string; href: string; note?: string };
+export type PostSection = { heading: string; paragraphs: string[]; links?: SectionLink[] };
+
 export type Post = {
   slug: string;
   title: string;
@@ -8,7 +11,7 @@ export type Post = {
   date: string;
   readingMinutes: number;
   related: string[];
-  sections: { heading: string; paragraphs: string[] }[];
+  sections: PostSection[];
 };
 
 export const blogCategories: BlogCategory[] = [
@@ -18,6 +21,102 @@ export const blogCategories: BlogCategory[] = [
 ];
 
 export const posts: Post[] = [
+  {
+    slug: "peptides-de-recherche-les-plus-etudies-panorama-2026",
+    title: "Les peptides de recherche les plus étudiés : panorama 2026",
+    excerpt:
+      "Rétatrutide, BPC-157, GHK-Cu, MOTS-c, tésamoréline : quels peptides de recherche concentrent le plus de travaux en laboratoire, et comment les comparer sans extrapoler les données.",
+    category: "guides-recherche",
+    date: "2026-10-09",
+    readingMinutes: 11,
+    related: ["retatrutide", "bpc-157", "ghk-cu", "mots-c", "tesamorelin", "nad-plus"],
+    sections: [
+      {
+        heading: "Comment lire ce panorama des peptides de recherche",
+        paragraphs: [
+          "Chaque année, un petit nombre de peptides de recherche concentre l’essentiel des publications et des demandes des laboratoires. Ce panorama les regroupe par axe de recherche pour aider les équipes à se repérer : signalisation métabolique, réparation tissulaire, axe GH / IGF-1, longévité mitochondriale et biologie cutanée.",
+          "Un rappel de méthode avant d’entrer dans le détail : les peptides présentés ici sont des réactifs destinés exclusivement à la recherche in vitro et aux usages analytiques. Les informations ci-dessous décrivent des mécanismes et des axes d’étude ; elles ne constituent ni un conseil médical, ni une posologie, ni une indication thérapeutique. Chaque donnée doit être rattachée à son modèle expérimental et à son protocole d’origine.",
+        ],
+      },
+      {
+        heading: "Axe métabolique : incrétines et amyline",
+        paragraphs: [
+          "C’est l’axe le plus actif de la recherche métabolique récente. Les agonistes des récepteurs des incrétines se comparent par le nombre de récepteurs qu’ils activent : un seul (GLP-1), deux (GIP et GLP-1) ou trois (en ajoutant le glucagon). L’enjeu expérimental n’est pas la « puissance » mais l’équilibre et la cinétique des signaux.",
+          "Pour construire une comparaison valable, on mesure au moins deux sorties (production d’AMPc et recrutement de la β-arrestine) sur des lignées exprimant chaque récepteur, et l’on rapporte les courbes concentration-réponse complètes plutôt qu’une concentration unique.",
+        ],
+        links: [
+          { label: "Rétatrutide (LY3437943)", href: "/recherche/retatrutide", note: "triple agoniste GIP / GLP-1 / glucagon" },
+          { label: "Tirzépatide (LY3298176)", href: "/recherche/tirzepatide", note: "double agoniste GIP / GLP-1" },
+          { label: "Sémaglutide", href: "/recherche/semaglutide", note: "agoniste sélectif du GLP-1, contrôle positif" },
+          { label: "Cagrilintide", href: "/recherche/cagrilintide", note: "analogue de l’amyline, second axe métabolique" },
+        ],
+      },
+      {
+        heading: "Réparation et récupération tissulaire",
+        paragraphs: [
+          "Les peptides de réparation sont étudiés dans des modèles de migration cellulaire, d’angiogenèse et de modulation de l’inflammation. Les données disponibles sont majoritairement précliniques : elles renseignent un mécanisme, pas une pratique.",
+          "Le BPC-157 et la fraction active de la thymosine β4 (TB-500) reviennent le plus souvent, souvent comparés côte à côte pour distinguer leurs voies d’action (angiogenèse pour l’un, dynamique de l’actine pour l’autre).",
+        ],
+        links: [
+          { label: "BPC-157", href: "/recherche/bpc-157", note: "migration des fibroblastes, voie du monoxyde d’azote" },
+          { label: "TB-500", href: "/recherche/tb-500", note: "séquestration de l’actine-G, migration cellulaire" },
+          { label: "GHK-Cu", href: "/recherche/ghk-cu", note: "synthèse de matrice extracellulaire" },
+          { label: "KPV", href: "/recherche/kpv", note: "modulation de la voie NF-κB" },
+        ],
+      },
+      {
+        heading: "Axe GH / IGF-1 et sécrétagogues",
+        paragraphs: [
+          "Cet axe regroupe les analogues du GHRH et les agonistes du récepteur de la ghréline, souvent étudiés en association pour leur synergie sur la sécrétion de l’hormone de croissance, ainsi que les facteurs de croissance de type IGF.",
+          "La sélectivité est le critère déterminant : un sécrétagogue « propre » agit sur sa cible sans perturber cortisol et prolactine, ce qui en fait un meilleur outil pour isoler la voie étudiée.",
+        ],
+        links: [
+          { label: "Ipamoréline", href: "/recherche/ipamorelin", note: "agoniste sélectif du récepteur de la ghréline" },
+          { label: "CJC-1295 + Ipamoréline", href: "/recherche/cjc-1295-ipamorelin", note: "synergie GHRH / ghréline" },
+          { label: "Tésamoréline", href: "/recherche/tesamorelin", note: "analogue stabilisé du GHRH" },
+          { label: "IGF-1 LR3", href: "/recherche/igf-1-lr3", note: "analogue à longue durée d’action de l’IGF-1" },
+        ],
+      },
+      {
+        heading: "Longévité : mitochondries, NAD+ et sénescence",
+        paragraphs: [
+          "La biologie du vieillissement s’intéresse à l’état énergétique de la cellule et à la communication entre mitochondrie et noyau. Le NAD+ y est central comme substrat des sirtuines et des PARP ; les peptides mitochondriaux comme MOTS-c et le SS-31 complètent le tableau.",
+          "L’épithalon, très recherché, illustre une règle du domaine : un fort intérêt ne vaut pas un niveau de preuve élevé. Il faut distinguer ce qui est établi, préliminaire ou simplement populaire.",
+        ],
+        links: [
+          { label: "NAD+", href: "/recherche/nad-plus", note: "substrat des sirtuines et des PARP" },
+          { label: "MOTS-c", href: "/recherche/mots-c", note: "peptide mitochondrial, activation de l’AMPK" },
+          { label: "SS-31 (élamiprétide)", href: "/recherche/ss-31", note: "ciblage de la cardiolipine" },
+          { label: "Épithalon", href: "/recherche/epithalon", note: "télomérase et sénescence réplicative" },
+        ],
+      },
+      {
+        heading: "Peau, matrice et pigmentation",
+        paragraphs: [
+          "En biologie cutanée, les peptides signal stimulent l’expression du collagène et de la matrice extracellulaire par les fibroblastes, tandis que les analogues de la mélanocortine servent de modèles de pigmentation.",
+          "Ces molécules intéressent autant la recherche dermatologique que la formulation cosmétique, où la stabilité en émulsion devient un paramètre d’étude à part entière.",
+        ],
+        links: [
+          { label: "GHK-Cu", href: "/recherche/ghk-cu", note: "expression du collagène et de la décorine" },
+          { label: "Matrixyl", href: "/recherche/matrixyl", note: "peptide signal pro-collagène" },
+          { label: "SNAP-8", href: "/recherche/snap-8", note: "mimétique de la SNAP-25, complexe SNARE" },
+          { label: "Melanotan II", href: "/recherche/melanotan-2", note: "analyse de la mélanogenèse" },
+        ],
+      },
+      {
+        heading: "Comparer et choisir sans se tromper",
+        paragraphs: [
+          "Trois réflexes évitent les erreurs les plus fréquentes. D’abord, comparer les récepteurs cibles et non les slogans. Ensuite, exiger un certificat d’analyse par lot et savoir le lire : la pureté HPLC ne dit rien à elle seule de la teneur nette en peptide. Enfin, rattacher chaque chiffre à son modèle expérimental.",
+          "Pour approfondir une molécule, chaque entrée de ce panorama renvoie à sa fiche de recherche détaillée. L’encyclopédie complète couvre l’ensemble des références disponibles, classées par axe.",
+        ],
+        links: [
+          { label: "Lire un certificat d’analyse (HPLC et MS)", href: "/blog/lire-un-certificat-analyse-peptide-hplc-ms" },
+          { label: "Agonistes simples, doubles et triples", href: "/blog/agonistes-incretines-simples-doubles-triples" },
+          { label: "Encyclopédie des peptides de recherche", href: "/recherche", note: "toutes les molécules, classées par axe" },
+        ],
+      },
+    ],
+  },
   {
     slug: "lire-un-certificat-analyse-peptide-hplc-ms",
     title: "Lire un certificat d’analyse de peptide : HPLC, spectrométrie de masse et teneur nette",

@@ -66,6 +66,16 @@ export default async function PostPage({ params }: { params: Promise<Params> }) 
               {s.paragraphs.map((para, j) => (
                 <p key={j}>{para}</p>
               ))}
+              {s.links?.length ? (
+                <ul>
+                  {s.links.map((l) => (
+                    <li key={l.href}>
+                      <Link href={l.href}>{l.label}</Link>
+                      {l.note ? <span className="muted"> — {l.note}</span> : null}
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
             </section>
           ))}
           <p className="small muted" style={{ borderTop: "1px solid var(--line)", paddingTop: 16, marginTop: 32 }}>
