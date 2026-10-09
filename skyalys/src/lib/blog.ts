@@ -118,6 +118,92 @@ export const posts: Post[] = [
     ],
   },
   {
+    slug: "secretagogues-hormone-de-croissance-ghrp-ghrh-combinaisons",
+    title: "Sécrétagogues de l’hormone de croissance : GHRP, GHRH et combinaisons",
+    excerpt:
+      "GHRH, ghréline, combinaisons : distinguer les familles de sécrétagogues de la GH et concevoir une étude in vitro propre de l’axe GH / IGF-1.",
+    category: "guides-recherche",
+    date: "2026-10-09",
+    readingMinutes: 10,
+    related: ["ipamorelin", "cjc-1295-ipamorelin", "tesamorelin", "igf-1-lr3", "ghrp-2", "sermorelin"],
+    sections: [
+      {
+        heading: "L’essentiel en bref",
+        paragraphs: [
+          "Les sécrétagogues de l’hormone de croissance se répartissent en deux familles : les analogues du GHRH, qui agissent sur le récepteur du GHRH, et les agonistes du récepteur de la ghréline (les GHRP). Les deux stimulent la sécrétion de GH, mais par des portes d’entrée différentes.",
+          "L’intérêt expérimental porte sur leur combinaison, leur sélectivité et l’aval de l’axe (la production d’IGF-1). Comme pour tout réactif de recherche, les éléments ci-dessous décrivent des mécanismes in vitro : ni posologie, ni usage humain ou animal.",
+        ],
+      },
+      {
+        heading: "Qu’est-ce qu’un sécrétagogue de l’hormone de croissance ?",
+        paragraphs: [
+          "Un sécrétagogue est une molécule qui déclenche la libération d’une hormone déjà présente dans la cellule, plutôt que d’apporter l’hormone elle-même. Pour la GH, deux récepteurs commandent cette libération au niveau des cellules somatotropes : le récepteur du GHRH et le récepteur de la ghréline (GHS-R1a).",
+          "Cette distinction structure tout le domaine : un analogue du GHRH et un GHRP n’activent pas la même voie, même s’ils convergent vers la sécrétion de GH. C’est ce qui rend leur étude combinée intéressante.",
+        ],
+        links: [
+          { label: "Ipamoréline", href: "/recherche/ipamorelin", note: "agoniste du récepteur de la ghréline" },
+          { label: "Sermoréline", href: "/recherche/sermorelin", note: "analogue du GHRH (1-29)" },
+        ],
+      },
+      {
+        heading: "GHRH ou ghréline : deux récepteurs, deux portes d’entrée",
+        paragraphs: [
+          "Les analogues du GHRH imitent l’hormone hypothalamique qui stimule physiologiquement la sécrétion de GH. Leur enjeu de recherche est souvent la stabilité : la sermoréline est à action courte, tandis que la tésamoréline et le CJC-1295 sont stabilisés pour prolonger leur présence.",
+          "Les GHRP, eux, miment la ghréline et agissent sur le GHS-R1a. Leur signalisation passe par la phospholipase C et le calcium intracellulaire, une voie distincte de celle du GHRH.",
+        ],
+        links: [
+          { label: "Tésamoréline", href: "/recherche/tesamorelin", note: "analogue du GHRH stabilisé" },
+          { label: "CJC-1295 (with DAC)", href: "/recherche/cjc-1295-dac", note: "liaison à l’albumine, action prolongée" },
+          { label: "GHRP-2", href: "/recherche/ghrp-2", note: "agoniste du récepteur de la ghréline" },
+        ],
+      },
+      {
+        heading: "Pourquoi étudier les combinaisons GHRH + ghréline ?",
+        paragraphs: [
+          "Quand on active les deux récepteurs en même temps, la réponse observée dépasse souvent la somme des réponses séparées : c’est l’effet synergique classiquement étudié entre un analogue du GHRH et un GHRP.",
+          "Les associations prêtes à l’emploi, comme le CJC-1295 combiné à l’ipamoréline, servent précisément à modéliser cette double stimulation dans un système cellulaire unique, avec des bras de contrôle pour chaque voie prise isolément.",
+        ],
+        links: [
+          { label: "CJC-1295 + Ipamoréline", href: "/recherche/cjc-1295-ipamorelin", note: "double stimulation GHRH / ghréline" },
+        ],
+      },
+      {
+        heading: "La sélectivité, critère clé d’un bon outil",
+        paragraphs: [
+          "Tous les sécrétagogues ne se valent pas comme outils de recherche. L’ipamoréline est réputée « propre » : elle active sa cible avec peu d’effet sur le cortisol et la prolactine, ce qui facilite l’attribution d’un résultat à la voie étudiée.",
+          "À l’inverse, le GHRP-6 influence fortement l’appétit, et l’hexaréline se lie aussi au récepteur CD36, une voie cardiovasculaire étudiée à part. Choisir le sécrétagogue le plus sélectif réduit les variables parasites de l’expérience.",
+        ],
+        links: [
+          { label: "GHRP-6", href: "/recherche/ghrp-6", note: "effet marqué sur l’appétit en modèle préclinique" },
+          { label: "Hexaréline", href: "/recherche/hexarelin", note: "double cible ghréline / CD36" },
+        ],
+      },
+      {
+        heading: "Des sécrétagogues aux facteurs de croissance : l’aval de l’axe",
+        paragraphs: [
+          "La GH libérée agit en grande partie via la production hépatique d’IGF-1. Pour étudier directement cet aval, on utilise des facteurs de croissance comme l’IGF-1 LR3, à action prolongée, ou les variants du facteur de croissance mécanique (MGF).",
+          "Relier le sécrétagogue (amont) au facteur de croissance (aval) permet de couvrir tout l’axe GH / IGF-1 dans un plan expérimental cohérent.",
+        ],
+        links: [
+          { label: "IGF-1 LR3", href: "/recherche/igf-1-lr3", note: "analogue à longue durée d’action de l’IGF-1" },
+          { label: "PEG-MGF", href: "/recherche/peg-mgf", note: "facteur de croissance mécanique pégylé" },
+          { label: "Encyclopédie — axe Myo-Science", href: "/categories/myo-science" },
+        ],
+      },
+      {
+        heading: "Concevoir une expérience exploitable",
+        paragraphs: [
+          "Une étude exploitable précise la lignée cellulaire et l’expression des récepteurs, la concentration, la durée d’exposition, le véhicule et les contrôles positifs et négatifs. Pour une combinaison, chaque molécule doit avoir son bras séparé avant l’association.",
+          "Enfin, la fiabilité des données tient à la qualité du réactif : exigez un certificat d’analyse par lot et sachez le lire, car la pureté HPLC ne garantit pas à elle seule la teneur nette en peptide.",
+        ],
+        links: [
+          { label: "Lire un certificat d’analyse (HPLC et MS)", href: "/blog/lire-un-certificat-analyse-peptide-hplc-ms" },
+          { label: "Reconstituer et conserver un peptide", href: "/blog/reconstitution-aliquotage-conservation-peptides" },
+        ],
+      },
+    ],
+  },
+  {
     slug: "retatrutide-tirzepatide-semaglutide-comparaison-recepteurs",
     title: "Rétatrutide, tirzépatide, sémaglutide : comparer les récepteurs, pas les slogans",
     excerpt:
