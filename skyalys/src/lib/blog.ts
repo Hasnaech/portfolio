@@ -118,6 +118,137 @@ export const posts: Post[] = [
     ],
   },
   {
+    slug: "retatrutide-tirzepatide-semaglutide-comparaison-recepteurs",
+    title: "Rétatrutide, tirzépatide, sémaglutide : comparer les récepteurs, pas les slogans",
+    excerpt:
+      "Un, deux ou trois récepteurs : comment distinguer sémaglutide, tirzépatide et rétatrutide dans un protocole in vitro, et quelles sorties mesurer pour une comparaison valable.",
+    category: "guides-recherche",
+    date: "2026-10-08",
+    readingMinutes: 9,
+    related: ["semaglutide", "tirzepatide", "retatrutide", "cagrilintide"],
+    sections: [
+      {
+        heading: "Trois profils de récepteurs, pas trois niveaux de puissance",
+        paragraphs: [
+          "La confusion la plus répandue consiste à ranger ces trois molécules sur une échelle de puissance. Ce n’est pas la bonne lecture. Elles se distinguent par la combinaison de récepteurs qu’elles activent, pas par une intensité croissante.",
+          "Le sémaglutide est un agoniste sélectif du récepteur GLP-1. Le tirzépatide agit sur deux récepteurs, GIP et GLP-1. Le rétatrutide en ajoute un troisième, celui du glucagon. Chaque ajout change la distribution tissulaire des effets et la nature des questions que l’on peut poser.",
+        ],
+        links: [
+          { label: "Sémaglutide", href: "/recherche/semaglutide", note: "agoniste sélectif GLP-1" },
+          { label: "Tirzépatide (LY3298176)", href: "/recherche/tirzepatide", note: "double agoniste GIP / GLP-1" },
+          { label: "Rétatrutide (LY3437943)", href: "/recherche/retatrutide", note: "triple agoniste GIP / GLP-1 / glucagon" },
+        ],
+      },
+      {
+        heading: "Quelles sorties mesurer",
+        paragraphs: [
+          "Une comparaison rigoureuse ne repose jamais sur une concentration unique. On construit des courbes concentration-réponse complètes et l’on rapporte au minimum l’EC50 et l’Emax pour chaque récepteur.",
+          "Mesurer deux voies en parallèle révèle d’éventuels biais de signalisation : la production d’AMPc d’un côté, le recrutement de la β-arrestine de l’autre. Deux agonistes de même EC50 sur l’AMPc peuvent différer nettement sur l’internalisation du récepteur.",
+        ],
+      },
+      {
+        heading: "Isoler la contribution de chaque récepteur",
+        paragraphs: [
+          "Pour attribuer un effet à un récepteur précis, on utilise des lignées exprimant chaque récepteur séparément, puis des systèmes les co-exprimant. Des antagonistes sélectifs servent de contrôles pour éteindre une voie à la fois.",
+          "Le sémaglutide joue ici un rôle utile de contrôle positif du GLP-1R, et la cagrilintide, qui agit sur une voie distincte (l’amyline), aide à délimiter ce qui relève des incrétines.",
+        ],
+        links: [{ label: "Cagrilintide", href: "/recherche/cagrilintide", note: "second axe, récepteurs de l’amyline" }],
+      },
+      {
+        heading: "Ne pas transférer les essais cliniques au réactif",
+        paragraphs: [
+          "Les essais cliniques publiés évaluent des candidats médicaments dans un protocole médical encadré. Leurs résultats décrivent une population, pas le comportement d’un réactif dans une boîte de culture, et inversement.",
+          "Ce qui se transfère réellement d’une publication à votre paillasse, c’est l’identité du composé, sa concentration préparée et les méthodes de confirmation de pureté et d’identité. Le reste dépend de votre modèle.",
+        ],
+        links: [
+          { label: "Agonistes simples, doubles et triples", href: "/blog/agonistes-incretines-simples-doubles-triples" },
+          { label: "Lire un certificat d’analyse", href: "/blog/lire-un-certificat-analyse-peptide-hplc-ms" },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "bpc-157-tb-500-deux-voies-de-reparation",
+    title: "BPC-157 et TB-500 : deux voies de réparation à ne pas confondre",
+    excerpt:
+      "Souvent cités ensemble, le BPC-157 et le TB-500 agissent par des mécanismes différents. Ce que dit la recherche préclinique, et comment les étudier proprement.",
+    category: "guides-recherche",
+    date: "2026-10-07",
+    readingMinutes: 8,
+    related: ["bpc-157", "tb-500", "ghk-cu", "kpv"],
+    sections: [
+      {
+        heading: "Deux peptides, deux mécanismes",
+        paragraphs: [
+          "Le BPC-157 et le TB-500 reviennent presque toujours ensemble dans les discussions sur la réparation tissulaire, ce qui laisse croire à une action identique. En réalité, ils empruntent des voies distinctes.",
+          "Le BPC-157 est étudié pour son influence sur l’angiogenèse et la voie du monoxyde d’azote, ainsi que sur la migration des fibroblastes. Le TB-500, fraction active de la thymosine β4, agit surtout sur la dynamique de l’actine du cytosquelette.",
+        ],
+        links: [
+          { label: "BPC-157", href: "/recherche/bpc-157", note: "angiogenèse, voie NO, fibroblastes" },
+          { label: "TB-500", href: "/recherche/tb-500", note: "séquestration de l’actine-G" },
+        ],
+      },
+      {
+        heading: "Un niveau de preuve surtout préclinique",
+        paragraphs: [
+          "Les données disponibles proviennent majoritairement de modèles animaux et cellulaires. Elles décrivent des mécanismes plausibles et des effets observés dans des conditions précises, pas une pratique transposable.",
+          "Rigueur minimale pour une expérience exploitable : préciser la lignée cellulaire ou le modèle, la concentration, la durée d’exposition, le véhicule et les contrôles positifs et négatifs.",
+        ],
+      },
+      {
+        heading: "Étudier l’association",
+        paragraphs: [
+          "Combiner deux peptides agissant sur des voies différentes est une question de recherche légitime, à condition de garder des bras séparés : chaque peptide seul, puis l’association, avec les mêmes contrôles.",
+          "D’autres peptides de matrice, comme le GHK-Cu, ou anti-inflammatoires, comme le KPV, sont parfois ajoutés dans les modèles combinés de réparation.",
+        ],
+        links: [
+          { label: "GHK-Cu", href: "/recherche/ghk-cu", note: "synthèse de matrice extracellulaire" },
+          { label: "KPV", href: "/recherche/kpv", note: "modulation de la voie NF-κB" },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "nad-mots-c-ss-31-recherche-mitochondriale",
+    title: "NAD+, MOTS-c et SS-31 : trois angles de la recherche mitochondriale",
+    excerpt:
+      "Métabolisme du NAD+, peptides d’origine mitochondriale, ciblage de la cardiolipine : trois approches complémentaires de la bioénergétique cellulaire et du vieillissement.",
+    category: "guides-recherche",
+    date: "2026-10-06",
+    readingMinutes: 8,
+    related: ["nad-plus", "mots-c", "ss-31", "epithalon"],
+    sections: [
+      {
+        heading: "Le NAD+, carrefour du métabolisme énergétique",
+        paragraphs: [
+          "Le NAD+ est l’accepteur d’électrons de nombreuses déshydrogénases et le substrat consommé par les sirtuines, les PARP et CD38. Il relie directement l’état énergétique de la cellule à sa signalisation.",
+          "En recherche, il sert à étudier l’activité des sirtuines, la réparation de l’ADN et la bioénergétique. Ses solutions sont instables : elles se préparent de façon extemporanée.",
+        ],
+        links: [{ label: "NAD+", href: "/recherche/nad-plus", note: "substrat des sirtuines et des PARP" }],
+      },
+      {
+        heading: "Les peptides codés par la mitochondrie",
+        paragraphs: [
+          "MOTS-c est codé par le génome mitochondrial lui-même. Il est étudié pour son action sur l’AMPK, le métabolisme du folate et sa translocation vers le noyau en situation de stress métabolique : un modèle de communication entre mitochondrie et noyau.",
+          "Cette communication bidirectionnelle est l’un des terrains les plus actifs de la biologie du vieillissement.",
+        ],
+        links: [{ label: "MOTS-c", href: "/recherche/mots-c", note: "activation de l’AMPK, dialogue mitochondrie-noyau" }],
+      },
+      {
+        heading: "Cibler la membrane : la cardiolipine",
+        paragraphs: [
+          "Le SS-31 (élamiprétide) se lie à la cardiolipine de la membrane mitochondriale interne, un lipide essentiel à l’organisation de la chaîne respiratoire. Il est étudié pour son influence sur l’efficacité de cette chaîne et sur le stress oxydatif.",
+          "Ces trois angles — cofacteur, peptide signal, lipide de membrane — se complètent plus qu’ils ne se concurrencent dans l’étude de la fonction mitochondriale.",
+        ],
+        links: [
+          { label: "SS-31 (élamiprétide)", href: "/recherche/ss-31", note: "ciblage de la cardiolipine" },
+          { label: "Épithalon", href: "/recherche/epithalon", note: "télomérase et sénescence, à relier au contexte longévité" },
+          { label: "Encyclopédie — axe Longévité", href: "/categories/longevite" },
+        ],
+      },
+    ],
+  },
+  {
     slug: "lire-un-certificat-analyse-peptide-hplc-ms",
     title: "Lire un certificat d’analyse de peptide : HPLC, spectrométrie de masse et teneur nette",
     excerpt:
